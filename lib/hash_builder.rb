@@ -1,5 +1,3 @@
-require "hash_builder/version"
-
-module HashBuilder
-  # Your code goes here...
+class HashBuilder
+  VERSION = '0.0.1'
 end
