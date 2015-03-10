@@ -5,8 +5,20 @@ RSpec.describe HashGenerator do
 
   subject { generator.to_h }
 
+  describe '#push_object' do
+    it 'begins a new object scope, yields, then pushes the object into the outer scope' do
+      generator.new_array
+      generator.push_object do
+        generator.store(:key, 1)
+      end
+      generator.store_scope(:array)
+
+      should eq(:array => [{:key => 1}])
+    end
+  end
+
   describe '#push_scope' do
-    it 'pushes an object into the outer scope' do
+    it 'pushes the current scope into the outer scope' do
       generator.new_array
       generator.new_object
       generator.store(:key, 1)
@@ -35,6 +47,18 @@ RSpec.describe HashGenerator do
       generator.store(:key, 1)
 
       should eq(:key => 1)
+    end
+  end
+
+  describe '#store_array' do
+    it 'begins a new array scope, yields, then stores the array at the given key' do
+      generator.store_array(:objects) do
+        generator.new_object
+        generator.store(:key, 1)
+        generator.push_scope
+      end
+
+      should eq(:objects => [{:key => 1}])
     end
   end
 
