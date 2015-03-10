@@ -1,4 +1,4 @@
-class HashBuilder
+class HashGenerator
   VERSION = '0.0.1'
 
   def initialize

@@ -1,8 +1,8 @@
-require File.expand_path('../lib/hash_builder', __FILE__)
+require File.expand_path('../lib/hash_generator', __FILE__)
 
 Gem::Specification.new do |spec|
-  spec.name = 'hash_builder'
-  spec.version = HashBuilder::VERSION
+  spec.name = 'hash_generator'
+  spec.version = HashGenerator::VERSION
   spec.authors = ['Dray Lacy']
   spec.email = ['dray@envylabs.com']
   spec.summary = 'Simple programmatic building of hashes.'
