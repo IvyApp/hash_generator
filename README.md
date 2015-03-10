@@ -1,5 +1,7 @@
 # HashGenerator
 
+[![Build Status](https://travis-ci.org/IvyApp/hash_generator.svg?branch=master)](https://travis-ci.org/IvyApp/hash_generator)
+
 Simple programmatic building of hashes.
 
 ## Installation
