@@ -38,6 +38,16 @@ RSpec.describe HashGenerator do
     end
   end
 
+  describe '#store_object' do
+    it 'begins a new object scope, yields, then stores the object at the given key' do
+      generator.store_object(:object) do
+        generator.store(:key, 1)
+      end
+
+      should eq(:object => {:key => 1})
+    end
+  end
+
   describe '#store_scope' do
     it 'stores the current scope in the outer scope at the given key' do
       generator.new_object

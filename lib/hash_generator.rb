@@ -32,6 +32,12 @@ class HashGenerator
     @scope.store(key, value)
   end
 
+  def store_object(key)
+    new_object
+    yield
+    store_scope(key)
+  end
+
   def store_scope(key)
     value = @scope
     end_scope
