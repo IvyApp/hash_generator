@@ -5,7 +5,7 @@ Gem::Specification.new do |spec|
   spec.version = HashBuilder::VERSION
   spec.authors = ['Dray Lacy']
   spec.email = ['dray@envylabs.com']
-  spec.summary = 'Makes building hashes simple.'
+  spec.summary = 'Simple programmatic building of hashes.'
   spec.homepage = ''
   spec.license = 'MIT'
 
